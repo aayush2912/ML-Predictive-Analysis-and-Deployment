@@ -3,7 +3,26 @@
 ## Overview
 This project aims to predict customer churn for a telecom service provider, enabling proactive retention strategies. By leveraging machine learning, the model identifies customers at risk of leaving, allowing the company to take data-driven actions to improve customer satisfaction and revenue retention.
 
-## Features
+## Key Features
+- **Model Development**: 
+  - Developed and analyzed the churn prediction model in `model.ipynb`.
+  - Achieved an **AUC score of 0.858** for model performance.
+
+- **Model Serving**:
+  - The trained model is served through a Flask web service (`predict.py`), providing a **RESTful API endpoint**.
+  - Handles **JSON request/response** for seamless integration with client applications.
+
+- **Environment Management**:
+  - Dependency management through `Pipfile`, ensuring consistent setup and configuration of production dependencies.
+
+- **Containerization**:
+  - Dockerized the application for easy deployment across environments using `Dockerfile`.
+  - Configured the container for a **production-ready setup** and implemented a **Gunicorn server** for high-performance serving.
+
+- **Cloud Deployment**:
+  - Deployed on **AWS Elastic Beanstalk**, ensuring **scalable cloud infrastructure** for handling production loads.
+
+## Goals
 - **Predicts churn likelihood** based on customer demographics, service subscriptions, and billing patterns.
 - **Processes raw data efficiently** by handling missing values, standardizing categorical variables, and feature engineering.
 - **Trains a robust predictive model** using logistic regression and evaluates performance with cross-validation.
@@ -44,30 +63,20 @@ To operationalize the model, it was deployed as a REST API for real-time predict
    - **Docker**: Packages the service for consistent deployment across systems.
    - **Cloud Deployment**: Deploys the containerized application on cloud platforms like AWS for scalability.
 
-### Running the Application
-1. **Install dependencies**:
-   ```bash
-   pip install pandas numpy scikit-learn flask
-   ```
-2. **Run the model locally**:
-   ```bash
-   python predict.py
-   ```
-3. **Deploy as a Flask API**:
-   ```bash
-   flask run --host=0.0.0.0 --port=9696
-   ```
-4. **Send API requests**:
-   ```bash
-   curl -X POST -H "Content-Type: application/json" -d '{"customer_data": [values]}' http://localhost:9696/predict
-   ```
+## Complete Machine Learning Lifecycle Implementation
+- **Development**: The model was developed and refined in `model.ipynb`.
+- **Training**: Training pipeline implemented in `train.py`.
+- **Validation**: Model performance validated and tested with **AUC score of 0.858**.
+- **Deployment**: The system was containerized using Docker and deployed on AWS Elastic Beanstalk.
+- **Cloud Hosting**: Deployed on Elastic Beanstalk for a **scalable and reliable production environment**.
 
 ## Business Impact
-This system empowers telecom providers to:
-- **Identify at-risk customers early** and take proactive measures.
-- **Enhance customer retention** through targeted interventions.
-- **Automate risk assessment** to prioritize retention efforts.
-- **Leverage data-driven insights** for improved customer engagement.
+This churn prediction system enables telecom providers to:
+- **Predict customer churn** and take timely action to prevent it.
+- **Automate churn risk assessment** for improved customer retention.
+- **Scale the solution** to handle increasing data and customer traffic.
+- **Host in a secure, reliable cloud environment**, ensuring continuous availability and performance.
+
 
 ## Conclusion
 This project successfully bridges data science, software engineering, and business strategy to create a fully functional telecom churn prediction system. By implementing machine learning and deploying the model as a web service, it offers a practical tool for real-world customer retention efforts.
