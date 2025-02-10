@@ -1,3 +1,77 @@
+"""
+This script handles the complete training pipeline for a customer churn prediction model,
+including data preprocessing, model validation, and final model creation.
+
+Pipeline Steps:
+--------------
+1. Data Loading and Preprocessing
+  - Loads customer data from CSV
+  - Cleans column names
+  - Processes categorical variables
+  - Handles missing values
+  - Converts target variable to binary
+
+2. Feature Engineering
+  - Separates numerical and categorical features
+  - Implements feature vectorization
+  - Prepares data for model training
+
+3. Model Training Functions
+  train(df_train, y_train, C=1.0):
+      - Converts DataFrame to dictionary format
+      - Vectorizes features
+      - Trains logistic regression model
+      - Returns vectorizer and trained model
+
+  predict(df, dv, model):
+      - Transforms input data
+      - Generates probability predictions
+      - Returns prediction scores
+
+4. Model Validation
+  - Implements 5-fold cross-validation
+  - Calculates AUC score for each fold
+  - Reports mean and standard deviation of scores
+
+5. Final Model Creation
+  - Trains model on full training dataset
+  - Evaluates on test set
+  - Saves model to binary file
+
+Parameters:
+-----------
+C: float, default=1.0
+   Regularization parameter for logistic regression
+n_splits: int, default=5
+   Number of folds for cross-validation
+
+Input:
+------
+- CSV file containing customer data with features:
+ * Demographics (gender, seniorcitizen, etc.)
+ * Services (phone, internet, etc.)
+ * Contract information
+ * Usage metrics
+
+Output:
+-------
+- Trained model saved as 'model_C={C}.bin'
+- Validation metrics printed to console
+- Final test set performance
+
+Usage:
+------
+python train.py
+
+Dependencies:
+------------
+- pandas
+- numpy
+- scikit-learn
+- pickle
+
+"""
+
 import pickle
 import pandas as pd
 import numpy as np

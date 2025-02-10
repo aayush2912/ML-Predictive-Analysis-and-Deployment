@@ -1,7 +1,4 @@
 """
-Telecom Customer Churn Prediction Service
----------------------------------------
-
 This script implements a Flask web service for predicting customer churn in a telecommunications company.
 It loads a pre-trained machine learning model and provides an API endpoint for making real-time predictions.
 
