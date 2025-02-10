@@ -1,0 +1,17 @@
+[[source]]
+# Defines where to download packages from
+url = "https://pypi.org/simple"    # Uses PyPI as the package source
+verify_ssl = true                  # Verifies SSL certificate
+name = "pypi"                      # Source identifier
+
+[packages]
+# Main project dependencies
+numpy = "*"          # Mathematical operations, arrays
+scikit-learn = "*"   # Machine learning functionality
+flask = "*"          # Web service framework
+gunicorn = "*"       # Production-grade WSGI server
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"  
