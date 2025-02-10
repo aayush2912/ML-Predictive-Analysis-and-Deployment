@@ -1,39 +1,3 @@
-"""
-This Pipfile manages Python dependencies for the Telco Customer Churn Prediction project
-using Pipenv for package management and virtual environment control.
-
-Package Configuration:
---------------------
-[[source]]
-- url: Uses PyPI as the primary package source
-- verify_ssl: Ensures secure package downloads
-- name: Identifies the source as "pypi"
-
-Required Packages:
-----------------
-[packages]
-numpy 
-scikit-learn
-flask
-gunicorn
-
-Python Version:
--------------
-- Requires Python 3.10
-
-Usage:
-------
-1. Install Pipenv:
-  pip install pipenv
-
-2. Install dependencies:
-  pipenv install
-
-3. Activate virtual environment:
-  pipenv shell
-
-"""
-
 [[source]]
 # Defines where to download packages from
 url = "https://pypi.org/simple"    
@@ -41,13 +5,14 @@ verify_ssl = true
 name = "pypi"                      
 
 [packages]
-# Main project dependencies
 numpy = "*"          
 scikit-learn = "*"   
 flask = "*"         
-gunicorn = "*"      
+gunicorn = "*"   
+awsebcli = "*"   
 
 [dev-packages]
+awsebcli = "*"
 
 [requires]
-python_version = "3.10"  
+python_version = "3.10"
